@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 public class CalculadorDeClasses implements Calculavel {
 
-    private BigDecimal realizaOperacao(Object object, Class<? extends Annotation> annotation) {
+    private BigDecimal realizaOperacaoMatematica(Object object, Class<? extends Annotation> annotation) {
         Field[] fields = object.getClass().getDeclaredFields();
 
         BigDecimal resultado = BigDecimal.ZERO;
@@ -34,12 +34,12 @@ public class CalculadorDeClasses implements Calculavel {
 
     @Override
     public BigDecimal somar(Object object) {
-        return this.realizaOperacao(object, Somar.class);
+        return this.realizaOperacaoMatematica(object, Somar.class);
     }
 
     @Override
     public BigDecimal subtrair(Object object) {
-        return this.realizaOperacao(object, Subtrair.class).abs();
+        return this.realizaOperacaoMatematica(object, Subtrair.class).abs();
     }
 
     @Override
