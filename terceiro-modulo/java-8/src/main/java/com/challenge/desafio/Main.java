@@ -10,15 +10,24 @@ public class Main {
     @Subtrair
     private BigDecimal a;
 
-    @Subtrair
+    @Somar
     private BigDecimal b;
 
-    public Main(BigDecimal a, BigDecimal b) {
+    @Somar
+    private BigDecimal c;
+
+    public Main(BigDecimal a, BigDecimal b, BigDecimal c) {
         this.a = a;
         this.b = b;
+        this.c = c;
     }
 
     public static void main(String[] args) {
-        System.out.println(new CalculadorDeClasses().totalizar(new Main(new BigDecimal(5), new BigDecimal(20))));
+        Main teste = new Main(new BigDecimal(5), new BigDecimal(20), new BigDecimal(30));
+
+        CalculadorDeClasses calculador = new CalculadorDeClasses();
+        BigDecimal total = calculador.totalizar(teste);
+
+        System.out.println("Resultado: " + total);
     }
 }
