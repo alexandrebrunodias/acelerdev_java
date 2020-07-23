@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class SubmissionService implements SubmissionServiceInterface {
 
-    private SubmissionRepository repository;
+    private final SubmissionRepository repository;
 
     @Override
     public List<Submission> findByChallengeIdAndAccelerationId(Long challengeId, Long accelerationId) {
